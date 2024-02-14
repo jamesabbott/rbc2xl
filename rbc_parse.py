@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Converts a Turnitin .rbc rubric file into Excel format
+Class to convert Turnitin .rbc rubric file into Excel format
 """
 
 import json
@@ -9,15 +9,16 @@ import pandas as pd
 
 class parser:
 
-	def parse(self, rbc):
+	def parse(self, rbc: str) -> pd.DataFrame:
+
 		"""
 		Parses rbc file, returning a tidied up dict
 
 		:param rbc: Path to Turnitin .rbc format file
 		:type rbc: str, required
 
-		:return data: Parsed data
-		:rtype data: dict
+		:return df: Parsed data
+		:rtype df: pd.DataFrame
 		"""
 
 		with open(rbc) as in_handle:
