@@ -39,3 +39,5 @@ MANIFEST
 # vscode
 .vscode
 *.code-workspace
+
+.DS_Store
