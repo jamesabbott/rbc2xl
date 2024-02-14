@@ -1,0 +1,11 @@
+click 
+numpy 
+pandas 
+pyarrow
+python-dateutil 
+pytz 
+setuptools
+six 
+tzdata 
+wheel
+XlsxWriter 
