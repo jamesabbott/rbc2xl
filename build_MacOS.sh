@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
-# Builds a distributable binary on MacOS
+# Builds a distributable package on MacOS
 
-rm -r {build,dist,rbc2xl.spec}
+paths=('build' 'dist' 'rbc2xl.spec')
 
-# Using onedir mode since onefile looks neater, but startup time is woeful...
-pyinstaller rbc2xl.py -w --onedir
+for path in ${paths[@]}; do 
+	if [[ -e "$path" ]]; then
+		rm -rv "$path"
+	fi
+done
+
+PYINST=$(which pyinstaller)
+if [[ -z "$PYINST" ]]; then
+	echo "pyinstaller not available..."
+	exit 1
+fi
+
+$PYINST rbc2xl.py -w --onefile
