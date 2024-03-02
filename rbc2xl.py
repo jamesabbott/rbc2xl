@@ -7,6 +7,7 @@ GUI interface for rbc to excel conversion
 from rbc_parse import parser
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
+from sys import platform
 
 class gui:
 	"""gui class to defined the interface"""
@@ -61,6 +62,12 @@ def exit() -> None:
 
 
 # Build the interface...
+if platform.startswith('win'):
+	but_width = 14
+	font_size = 10
+else:
+	but_width = 20
+	font_size = 14
 
 window = tk.Tk()
 window.title('rbc2xl')
@@ -68,14 +75,14 @@ interface = gui()
 
 drop_empty = tk.IntVar()
 
-rbc_button  = tk.Button(window, width = 20, text = "Select rubric", 
-						font = ("Roboto", 14), command = interface.browse_rbc)
+rbc_button  = tk.Button(window, width = but_width, text = "Select rubric", 
+						font = ("Roboto", font_size), command = interface.browse_rbc)
 
-save_button = tk.Button(window, width = 20, text = "Save", 
-						font = ("Roboto", 14), state = 'disabled', command = lambda: interface.convert())
+save_button = tk.Button(window, width = but_width, text = "Save", 
+						font = ("Roboto", font_size), state = 'disabled', command = lambda: interface.convert())
 
-exit_button  = tk.Button(window, width = 20,text = "Exit", 
-						 font = ("Roboto", 14), command = lambda: exit())
+exit_button  = tk.Button(window, width = but_width,text = "Exit", 
+						 font = ("Roboto", font_size), command = lambda: exit())
 
 selected = tk.Label(text = f"Selected file: {interface.rbc_path}")
 
