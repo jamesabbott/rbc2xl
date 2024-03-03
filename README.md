@@ -10,7 +10,7 @@ This tool reads exported .rbc files and converts them to Excel format. It is wri
 
 ### Windows/MacOS binaries
 
-The Windows and MacOS builds do not require installation - just download them to a convenient location and double-click them to run.
+The Windows and MacOS builds do not require installation - just download the appropriate package from [https://github.com/jamesabbott/rbc2xl/releases](https://github.com/jamesabbott/rbc2xl/releases) to a convenient location and double-click them to run.
 
 ### Native Python Code (MacOS/Linux)
 
