@@ -36,11 +36,21 @@ pip install -r requirements.txt
 ```
 
 4. Run it!
+
+*GUI interface*
 ```
 ./rbc2xl.py
 ```
 
+*Command line interface*
+
+```
+./rbc2xl-cli.py --help
+```
+
 ## Usage
+
+*GUI interface*
 
 This hopefully requires little explanation. 
 
@@ -51,3 +61,26 @@ This hopefully requires little explanation.
 3.  Click the 'Save' button and navigate to the desired location, then enter a filename to save the Excel format file.
 
 4.  Either repeat with another .rbc file or click 'Exit'
+
+*Command line interface*
+
+N.B. This is only available when the native Python code is installed, not from the Windows/MacOS packages.
+
+Usage information is provided with the '--help' argument:
+```
+./rbc2xl.py --help
+Usage: rbc2xl_cli.py [OPTIONS]
+
+Options:
+  -rbc TEXT    Path to Turnitin rbc file  [required]
+  -xl TEXT     Path to output excel file  [required]
+  -drop_empty  Don't include empty columns in output
+  --help       Show this message and exit.
+```
+
+The path to the .rbc rubric file should be provided with the `--rbc` argument, and the path to the Excel file to create with `-xl`. Empty columns with no critera defined can be removed by adding the `-drop_empty` argument. i.e.
+
+```
+./rbc2xl.py -rbc rubric.rnc -xl converted.xlsx -drop_empty
+```
+
