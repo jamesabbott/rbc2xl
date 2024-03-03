@@ -16,26 +16,37 @@ The Windows and MacOS builds do not require installation - just download the app
 
 #### Requirements
 *  Python 3 (Tested with 3.10 and 3.12.1 on MacOS)
-*  git
+*  pip
 
-1.  Clone this repository
+1.  Clone this repository and change into the resulting directory
 
 ```
 git clone https://github.com/jamesabbott/rbc2xl.git
-
-```
-2.  Change into the local copy of the repository
-
-```
 cd rbc2xl
 ```
-3.  Install prerequisites
+
+or download the tar.gz or zip file from the [https://github.com/jamesabbott/rbc2xl/releases](releases) section, and unpack:
+
+*.tar.gz*
+```
+tar zxvf v1.0.0.tar.gz
+cd 1.0.0
+```
+
+*.zip*
+
+```
+unzip v1.0.0.zip
+cd 1.0.0
+```
+
+2.  Install prerequisites
 
 ```
 pip install -r requirements.txt
 ```
 
-4. Run it!
+3. Run it!
 
 *GUI interface*
 ```
